@@ -1,0 +1,6 @@
+project:
+  output-dir: _site/instructor
+
+teaching:
+  show-solutions: true
+  default-solution-title: "Solution"

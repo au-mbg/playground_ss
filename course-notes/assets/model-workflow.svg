@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" role="img" aria-labelledby="title desc">
+  <title id="title">A three-stage modeling workflow</title>
+  <desc id="desc">Observe, model, and interpret boxes connected by arrows.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#176b87"/>
+    </marker>
+  </defs>
+  <rect width="900" height="250" rx="24" fill="#f4f8fa"/>
+  <g fill="#ffffff" stroke="#176b87" stroke-width="4">
+    <rect x="45" y="65" width="210" height="120" rx="16"/>
+    <rect x="345" y="65" width="210" height="120" rx="16"/>
+    <rect x="645" y="65" width="210" height="120" rx="16"/>
+  </g>
+  <g stroke="#176b87" stroke-width="5" marker-end="url(#arrow)">
+    <path d="M270 125 H325"/>
+    <path d="M570 125 H625"/>
+  </g>
+  <g fill="#243447" font-family="system-ui, sans-serif" font-size="28" font-weight="600" text-anchor="middle">
+    <text x="150" y="135">Observe</text>
+    <text x="450" y="135">Model</text>
+    <text x="750" y="135">Interpret</text>
+  </g>
+</svg>

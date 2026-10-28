@@ -1,0 +1,19 @@
+:root { --course-border: #d7e1e7; }
+
+.content { line-height: 1.65; }
+main.content { max-width: 900px; }
+h1, h2, h3 { letter-spacing: -0.015em; }
+pre, .sourceCode, .callout { border-radius: 0.4rem; }
+.quarto-figure { margin-block: 1.75rem; }
+.figure-caption,
+figcaption,
+caption {
+  color: #52616b;
+  font-weight: 500;
+}
+.callout.callout-style-default { border-color: var(--course-border); }
+.sidebar-navigation .sidebar-item-container { padding-block: 0.1rem; }
+
+@media (max-width: 767px) {
+  .content { line-height: 1.55; }
+}

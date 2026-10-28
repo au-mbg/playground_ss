@@ -1,0 +1,58 @@
+---
+title: "A first quantitative lesson"
+---
+
+## A simple relationship
+
+Many scientific relationships can first be explored with a small model. The
+illustration below shows the three parts of the workflow used in this lesson.
+
+![Observe a system, express a model, and interpret its result.](../assets/model-workflow.svg){fig-align="center" width="80%"}
+
+Suppose a measured response is proportional to an input:
+
+$$
+y = kx.
+$$
+
+The optional supporting package can keep reusable calculations in one tested
+place while the course page concentrates on interpretation.
+
+```{python}
+#| label: tbl-example-values
+#| tbl-cap: "Responses predicted by a proportional model."
+from course_utils.example import proportional_response
+
+inputs = [0, 1, 2, 3]
+[(value, proportional_response(value, rate=2.5)) for value in inputs]
+```
+
+## Exercise
+
+::: {teaching="exercise"}
+Predict the response for an input of 4 when $k=2.5$. Explain what the value of
+$k$ means in this model.
+:::
+
+```{python}
+#| teaching: exercise
+#| eval: false
+# Replace the missing value, then run the cell.
+proportional_response(4, rate=...)
+```
+
+::: {.callout-solution title="Worked solution"}
+Substitution gives $y=2.5\times4=10$. The rate $k$ means that the response
+increases by 2.5 units for every one-unit increase in the input.
+:::
+
+```{python}
+#| teaching: solution
+proportional_response(4, rate=2.5)
+```
+
+## Takeaway
+
+A useful computational example should support the scientific idea rather than
+hide it. Put reusable mechanics in a helper only when that makes the authored
+lesson clearer.

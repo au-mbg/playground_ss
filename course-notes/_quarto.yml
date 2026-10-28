@@ -1,0 +1,28 @@
+project:
+  type: website
+
+website:
+  title: "COURSE_TITLE"
+  search: true
+  sidebar:
+    style: docked
+    contents:
+      - href: index.qmd
+        text: Home
+      - section: Lessons
+        contents:
+          - lessons/first-lesson.qmd
+
+brand: _brand.yml
+
+filters:
+  - callout-solution
+  - strip-solution
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    code-copy: true
+    code-overflow: wrap

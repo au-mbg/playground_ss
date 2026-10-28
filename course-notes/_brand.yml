@@ -1,0 +1,19 @@
+meta:
+  name: "COURSE_TITLE"
+
+color:
+  palette:
+    ink: "#243447"
+    ocean: "#176b87"
+    sky: "#dceff5"
+    slate: "#52616b"
+    paper: "#fbfcfd"
+  foreground: ink
+  background: paper
+  primary: ocean
+  secondary: slate
+
+typography:
+  base: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+  headings: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+  monospace: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"

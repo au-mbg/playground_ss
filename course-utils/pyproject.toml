@@ -1,0 +1,15 @@
+[project]
+name = "course-utils"
+version = "0.1.0"
+description = "Optional reusable Python helpers for COURSE_TITLE"
+readme = "README.md"
+authors = [{ name = "COURSE_AUTHOR", email = "author@example.org" }]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+course-utils = "course_utils:main"
+
+[build-system]
+requires = ["uv_build>=0.8.18,<0.9.0"]
+build-backend = "uv_build"

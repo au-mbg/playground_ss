@@ -1,0 +1,20 @@
+# Pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# Quarto state and generated output
+**/.quarto/
+course-notes/_output/
+course-notes/_site/
+**/*.quarto_ipynb
+**/*.quarto_ipynb_*
+
+# Python caches and local environments
+**/__pycache__/
+*.py[cod]
+.venv/
+
+# Operating-system and editor files
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,27 @@
+---
+title: "COURSE_TITLE"
+subtitle: "A short description of the course belongs here"
+---
+
+Welcome to the course website. Use this page to orient students: state what
+they will learn, how the material is organized, and where to begin.
+
+::: {.callout-tip}
+## Start here
+
+Open [the first lesson](lessons/first-lesson.qmd) to see prose, a figure,
+executable Python, an exercise, and a profile-dependent solution.
+:::
+
+## Learning goals
+
+After working through the example module, learners should be able to:
+
+- identify the main concept introduced by the lesson;
+- use a small computational model to explore it; and
+- explain their result in plain language.
+
+## How to use these notes
+
+Read the explanation, run or adapt the examples, and complete each exercise
+before comparing your work with any feedback provided by the instructor.
