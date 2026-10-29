@@ -39,8 +39,24 @@ cwd = "course-notes"
 cmd = "quarto render --profile instructor"
 cwd = "course-notes"
 
+[tasks.render-notebooks]
+cmd = "quarto render 'lessons/TØ1.qmd' --to ipynb"
+cwd = "course-notes"
+description = "Render lesson notebooks for JupyterLite"
+
 [tasks._clean-python]
 cmd = "rm -rf course-utils/src/course_utils/__pycache__ scripts/__pycache__"
+
+[tasks.stage-notebooks]
+cmd = """
+rm -rf build/notebooks &&
+mkdir -p build/notebooks/student build/notebooks/instructor &&
+cp course-notes/_site/lessons/*.ipynb build/notebooks/student/ &&
+cp course-notes/_site/instructor/lessons/*.ipynb build/notebooks/instructor/ &&
+echo "Student notebooks: $(find build/notebooks/student -name '*.ipynb' | wc -l | tr -d ' ')" &&
+echo "Instructor notebooks: $(find build/notebooks/instructor -name '*.ipynb' | wc -l | tr -d ' ')"
+"""
+description = "Stage generated notebooks for the built-notebooks branch"
 
 [dependencies]
 python = "3.12.*"

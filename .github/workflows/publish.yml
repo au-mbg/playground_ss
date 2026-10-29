@@ -1,3 +1,4 @@
+
 name: Build and publish website
 
 on:
@@ -6,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -24,13 +25,24 @@ jobs:
         with:
           pixi-version: v0.72.1
           cache: true
+
       - name: Render and assemble both course sites
         run: pixi run publish
+
+      - name: Stage notebooks
+        run: pixi run stage-notebooks
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: course-notes/_site
+
+      - name: Upload staged notebooks
+        uses: actions/upload-artifact@v4
+        with:
+          name: course-notebooks
+          path: build/notebooks
+          if-no-files-found: error
 
   deploy:
     needs: build
@@ -42,3 +54,22 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  publish-notebooks:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download staged notebooks
+        uses: actions/download-artifact@v4
+        with:
+          name: course-notebooks
+          path: notebooks
+
+      - name: Publish notebooks to built-notebooks
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: built-notebooks
+          folder: notebooks
+          target-folder: built_notebooks
+          clean: true
+          commit-message: Update notebooks

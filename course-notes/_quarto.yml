@@ -18,7 +18,7 @@ brand: _brand.yml
 filters:
   - callout-solution
   - strip-solution
-  - _extensions/au-mbg/jupyterlite-link.lua
+  - jupyterlite-link
 
 format:
   html:
@@ -27,6 +27,16 @@ format:
     toc: true
     code-copy: true
     code-overflow: wrap
+
+  ipynb:
+    number-sections: true
+    number-depth: 2
+
+format-links:
+  - html
+  - format: ipynb
+    text: Notebook
+    icon: journal-code
 
 
 teaching:
