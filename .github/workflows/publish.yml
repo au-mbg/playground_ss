@@ -24,6 +24,7 @@ jobs:
       - uses: prefix-dev/setup-pixi@v0.9.4
         with:
           pixi-version: v0.72.1
+          log-level: vvv
           cache: true
 
       - name: Render and assemble both course sites
