@@ -46,6 +46,8 @@ cmd = "rm -rf course-utils/src/course_utils/__pycache__ scripts/__pycache__"
 python = "3.12.*"
 quarto = ">=1.9.38,<2"
 pandas = ">=3.1.0,<4"
+matplotlib = ">=3.11.2,<4"
+ipywidgets = ">=8.1.9,<9"
 
 [pypi-dependencies]
 jupyter = ">=1.1.1, <2"
