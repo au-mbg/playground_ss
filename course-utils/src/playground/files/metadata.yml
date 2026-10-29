@@ -1,0 +1,8 @@
+datasets:
+#TØ1
+  parent_child_seq.csv:
+    shortnames: ["seq_data"]
+    week: 1
+    orignialname: "parent_child_seq.csv"
+    exercise: TØ1.qmd
+    description: "seq data generated for 2 alleles pr family member"

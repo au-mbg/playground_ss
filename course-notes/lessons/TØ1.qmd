@@ -8,9 +8,20 @@ jupyterlite: true
 
 ```{python}
 import pandas as pd
+from playground.files import load_dataset
+from IPython.display import display, HTML
+from playground.utils import flowers
 ```
 
 ## Extra for exercise 12
+
+### The flower garden
+
+In exercise 12 you were asked how tall a plant would be according to blending theory. Play around with the widget below. Why does a cross between a white and a red flower only result in pink flowers? What happens if you cross a pink and a red flower? a pink and a white flower? Are the fractions of each color as you expected?
+
+```{python}
+flowers.flower_garden_widget
+```
 
 
 ## Extra for exercise 15
@@ -23,4 +34,50 @@ Thankfully we have different tools that can help with this today. Try and run th
 The code below uploads a csv file containing sequences for a part of the alleles from two parents and their child.
 
 ```{python}
-#seq = pd.read_csv()
+seq = load_dataset('seq_data')
+# Display the full string instead of truncating it
+display(HTML(
+    seq.to_html(index=False, escape=True)
+))
+```
+
+Now we can use the codepiece below to highlight the differences in the childs allel sequences that not found in either the mother or fathers alleles.(You dont have to understand the code. Just see that very few lines can save us from a lot of manual labour.)
+
+```{python}
+def de_novo_mut(mom1, mom2, dad1, dad2, child, show_html=True, line_length=100):
+    highlighted = []
+    mutation_positions = []
+    
+    for i in range(len(child)):
+        if child[i] in [mom1[i], mom2[i], dad1[i], dad2[i]]:
+            highlighted.append(child[i])
+        else:
+            highlighted.append(f'<span style="color: red; font-weight: bold;">{child[i]}</span>')
+            mutation_positions.append(i + 1)
+
+    if show_html:
+        html_lines = []
+        for start in range(0, len(highlighted), line_length):
+            line = ''.join(highlighted[start:start+line_length])
+            html_lines.append(line)
+        html_code = '<div style="white-space: pre; font-family: monospace; line-height: 1.5em; border: 1px solid #ddd; padding: 10px; text-align: left;">'
+        html_code += '<br>'.join(html_lines)
+        html_code += '</div>'
+        display(HTML(html_code))
+    
+    return mutation_positions
+
+```
+
+The last codepiece prints the sequences and hightligts the found de novo mutations
+
+```{python}
+# --- Run mutation detection and show results ---
+print("Analyzing Child allele 1:")
+mutations_found_1 = de_novo_mut(seq['Sequence'][0], seq['Sequence'][1], seq['Sequence'][2], seq['Sequence'][3], seq['Sequence'][4])
+print(f"Found {len(mutations_found_1)} de novo mutations at positions: {mutations_found_1}\n")
+
+print("Analyzing Child allele 2:")
+mutations_found_2 =de_novo_mut(seq['Sequence'][0], seq['Sequence'][1], seq['Sequence'][2], seq['Sequence'][3], seq['Sequence'][5])
+print(f"Found {len(mutations_found_2)} de novo mutations at positions: {mutations_found_2}")
+```

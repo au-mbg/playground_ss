@@ -5,7 +5,7 @@ import yaml
 
 
 def _load_available_datasets() -> dict[str, str]:
-    metadata_path = files("fysisk_biokemi.datasets").joinpath("metadata.yml")
+    metadata_path = files("playground.files").joinpath("metadata.yml")
     with metadata_path.open("r", encoding="utf-8") as metadata_file:
         datasets = yaml.safe_load(metadata_file)["datasets"]
 
@@ -26,7 +26,7 @@ def get_dataset_path(name: str) -> str:
             f"Available datasets: {list(available_datasets.keys())}"
         )
     return str(
-        files("fysisk_biokemi.datasets.files").joinpath(available_datasets[name])
+        files("playground.files").joinpath(available_datasets[name])
     )
 
 
