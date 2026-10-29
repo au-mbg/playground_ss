@@ -24,7 +24,7 @@ jobs:
         with:
           pixi-version: v0.72.1
           log-level: vvv
-          cache: true
+          cache: false
           run-install: false
 
       - name: Debug Pixi installation
