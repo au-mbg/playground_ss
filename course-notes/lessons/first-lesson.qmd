@@ -21,7 +21,7 @@ place while the course page concentrates on interpretation.
 ```{python}
 #| label: tbl-example-values
 #| tbl-cap: "Responses predicted by a proportional model."
-from course_utils.example import proportional_response
+from playground.utils.example import proportional_response
 
 inputs = [0, 1, 2, 3]
 [(value, proportional_response(value, rate=2.5)) for value in inputs]
