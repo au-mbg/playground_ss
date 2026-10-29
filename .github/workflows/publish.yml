@@ -65,11 +65,16 @@ jobs:
           name: course-notebooks
           path: notebooks
 
-      - name: Publish notebooks to built-notebooks
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: built-notebooks
-          folder: notebooks
-          target-folder: built_notebooks
-          clean: true
-          commit-message: Update notebooks
+
+- name: Checkout repository
+  uses: actions/checkout@v4
+
+- name: Publish notebooks to built-notebooks
+  uses: JamesIves/github-pages-deploy-action@v4
+  with:
+    token: ${{ secrets.GITHUB_TOKEN }}
+    branch: built-notebooks
+    folder: notebooks
+    target-folder: built_notebooks
+    clean: true
+    commit-message: Update notebooks
