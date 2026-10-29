@@ -1,7 +1,7 @@
 ---
-title: TØ1
+title: TOE1
 subtitle: Extra for exercise  12 and 15
-jypyter: python3
+jupyter: python3
 jupyterlite: true
 
 ---
