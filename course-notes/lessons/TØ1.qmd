@@ -1,0 +1,26 @@
+---
+title: TØ1
+subtitle: Extra for exercise  12 and 15
+jypyter: python3
+jupyterlite: true
+
+---
+
+```{python}
+import pandas as pd
+```
+
+## Extra for exercise 12
+
+
+## Extra for exercise 15
+Ektra for exercise 15 from the book
+In exercise 15 you compared three alleles and found denovo mutations. 
+Spotting a de novo mutation would not be that easy in a real life, as it was in the small sequences you just compared, as the genome is much much longer than that. Imagine having to comapare thousands ands thouands of basepairs in the same way as you did in exercise 15 - that would be tiresome really fast!
+
+Thankfully we have different tools that can help with this today. Try and run the code piece below and take a look at the sequences. Then run the next code piece and look at where the code found de novo mutations.
+
+The code below uploads a csv file containing sequences for a part of the alleles from two parents and their child.
+
+```{python}
+#seq = pd.read_csv()

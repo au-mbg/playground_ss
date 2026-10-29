@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from course-utils!")
+from .flowers import flower_garden_widget

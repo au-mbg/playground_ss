@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "COURSE_TITLE"
+  title: "Genetics"
   search: true
   sidebar:
     style: docked
@@ -11,13 +11,14 @@ website:
         text: Home
       - section: Lessons
         contents:
-          - lessons/first-lesson.qmd
+          - lessons/TØ1.qmd
 
 brand: _brand.yml
 
 filters:
   - callout-solution
   - strip-solution
+  - _extensions/au-mbg/jupyterlite-link.lua
 
 format:
   html:
@@ -26,3 +27,18 @@ format:
     toc: true
     code-copy: true
     code-overflow: wrap
+
+
+teaching:
+  colab:
+    repo: au-mbg/fysisk-biokemi
+    branch: built-notebooks
+    root: built_notebooks
+    notebook-profile: student
+  jupyterlite:
+    url: https://au-mbg.github.io/jupyterlite-playground/lab/index.html
+    repo: au-mbg/playground_ss
+    branch: built-notebooks
+    root: built_notebooks
+    notebook-profile: student
+    course-directory: playground_ss
