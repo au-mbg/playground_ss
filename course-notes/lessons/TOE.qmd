@@ -7,6 +7,14 @@ jupyterlite: true
 ---
 
 ```{python}
+try:
+    import playground
+    print("playground is already installed.")
+except ImportError:
+    %pip install -q "course-utils @ https://au-mbg.github.io/playground_ss/wheels/course_utils-0.1.0-py3-none-any.whl"
+```
+
+```{python}
 import pandas as pd
 from playground.files import load_dataset
 from IPython.display import display, HTML
