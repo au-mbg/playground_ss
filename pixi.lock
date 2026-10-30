@@ -10115,6 +10115,26 @@ packages:
   timestamp: 1786599623274
 - pypi: ./course-utils
   name: course-utils
+  requires_dist:
+  - matplotlib>=3.10.6 ; extra == 'standard'
+  - numpy>=2.3.3 ; extra == 'standard'
+  - openpyxl>=3.1.5 ; extra == 'standard'
+  - pandas>=2.3.2 ; extra == 'standard'
+  - ipywidgets>=8.1 ; extra == 'standard'
+  - anywidget>=0.9.18 ; extra == 'standard'
+  - plotly>=6.3.0 ; extra == 'standard'
+  - scipy ; extra == 'standard'
+  - biopython ; extra == 'standard'
+  - jupyter ; extra == 'standard'
+  - matplotlib ; extra == 'pyodide'
+  - numpy ; extra == 'pyodide'
+  - openpyxl ; extra == 'pyodide'
+  - pandas ; extra == 'pyodide'
+  - ipywidgets ; extra == 'pyodide'
+  - anywidget ; extra == 'pyodide'
+  - plotly ; extra == 'pyodide'
+  - scipy ; extra == 'pyodide'
+  - biopython ; extra == 'pyodide'
   requires_python: '>=3.12'
 - pypi: https://files.pythonhosted.org/packages/02/8b/b83f7780dad22e0878e4c7bd9158ebd24ed12bc3d5e3a471cd0576f77ded/pyzmq-27.2.0-cp312-abi3-win_amd64.whl
   name: pyzmq
