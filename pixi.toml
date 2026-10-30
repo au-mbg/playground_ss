@@ -68,3 +68,10 @@ ipywidgets = ">=8.1.9,<9"
 [pypi-dependencies]
 jupyter = ">=1.1.1, <2"
 course-utils = { path = "course-utils/", editable = true }
+
+[feature.dev.dependencies]
+uv = "*"
+
+[environments]
+default = { features = [] }
+dev = { features = ["dev"], solve-group = "default" }

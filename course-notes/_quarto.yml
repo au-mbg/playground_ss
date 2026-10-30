@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - wheels/**
 
 website:
   title: "Genetics"
@@ -11,7 +13,7 @@ website:
         text: Home
       - section: Lessons
         contents:
-          - lessons/TØ1.qmd
+          - lessons/TOE.qmd
 
 brand: _brand.yml
 
