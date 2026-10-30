@@ -32,6 +32,7 @@ from playground.utils import flowers
 In exercise 12 you were asked how tall a plant would be according to blending theory. Play around with the widget below. Why does a cross between a white and a red flower only result in pink flowers? What happens if you cross a pink and a red flower? a pink and a white flower? Are the fractions of each color as you expected?
 
 ```{python}
+#| eval: false
 flowers.flower_garden_widget()
 ```
 
