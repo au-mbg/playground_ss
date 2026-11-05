@@ -10,6 +10,14 @@ Helper tool to remember the different phases in mitosis
 Try the widget and choose the correct phase for each cell phase. Describe what happens in each phase
 
 ```{python}
+try:
+    import playground
+    print("Already installed")
+except ImportError:
+    %pip install -q "course-utils[pyodide] @ https://au-mbg.github.io/playground_ss/wheels/course_utils-0.1.0-py3-none-any.whl"
+```
+
+```{python}
 from playground.utils import mitosis_widget
 
 mitosis_widget()
