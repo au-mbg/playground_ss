@@ -1,0 +1,31 @@
+---
+title: TE2
+subtitle: Extra for exercise  TE 2
+jupyter: python3
+jupyterlite: true
+---
+
+Helper tool to remember the different phases in mitosis
+
+Try the widget and choose the correct phase for each cell phase. Describe what happens in each phase
+
+```{python}
+from playground.utils import mitosis_widget
+
+mitosis_widget()
+```
+
+Helper tool to remember the different phases in meiosis
+
+Try the widget and choose the correct phase for each cell phase. Describe what happens in each phase
+
+```{python}
+
+from playground.utils import meiosis_ordering_widget
+
+meiosis_ordering_widget()
+```
+
+
+
+
